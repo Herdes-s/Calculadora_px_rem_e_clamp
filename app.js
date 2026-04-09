@@ -26,7 +26,7 @@ function calculationClamp(max, min, lMax, lMin) {
   const vw = ((difference / dTela) * 100).toFixed(2);
   const base = (min - (vw * lMin) / 100).toFixed(2);
 
-  return `${min / 16}rem, ${vw}vw + ${base}rem, ${max / 16}rem`;
+  return `${min / 16}rem, ${vw}vw + ${base / 16}rem, ${max / 16}rem`;
 }
 
 btnConverter.addEventListener("click", () => {
