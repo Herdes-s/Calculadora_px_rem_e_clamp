@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt.br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <main class="main">
+      <section class="converter">
+        <h2>Conversor</h2>
+        <div>
+          <input class="num-px" type="number" id="num-px" placeholder="px" />
+          <input class="num-rem" type="number" id="num-rem" placeholder="rem" />
+        </div>
+        <button class="btn" id="btn-converter">Converter</button>
+        <p class="resp" id="resp"></p>
+      </section>
+      <section class="section-Clamp">
+        <div class="clamp_container">
+            <input
+              type="number"
+              id="max"
+              class="max clamp-input"
+              placeholder="valor max"
+            />
+            <input
+              type="number"
+              id="min"
+              class="min clamp-input"
+              placeholder="valor min"
+            />
+            <input
+              type="number"
+              id="l-max"
+              class="l-max clamp-input"
+              placeholder="valor largura max"
+            />
+            <input
+              type="number"
+              id="l-min"
+              class="l-min clamp-input"
+              placeholder="valor largura min"
+            />
+        </div>
+        <button class="btn" id="calculation-btn">Calcular</button>
+        <p id="result"></p>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
