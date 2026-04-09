@@ -12,21 +12,22 @@ const btnCalculation = document.getElementById("calculation-btn");
 
 // Fixed Logic: REM to PX (1rem * 16 = 16px)
 function convertToPx(px) {
-  return px * 16;
+  return px / 16;
 }
 
 // Fixed Logic: PX to REM (16px / 16 = 1rem)
 function convertToRem(rem) {
-  return rem / 16;
+  return rem * 16;
 }
 
 function calculationClamp(max, min, lMax, lMin) {
   const difference = max - min;
   const dTela = lMax - lMin;
   const vw = ((difference / dTela) * 100).toFixed(2);
-  const base = (min - (vw * lMin) / 100).toFixed(2);
+  const b = (min - (vw * lMin) / 100).toFixed(2);
+  const base = Number(b / 16).toFixed(2);
 
-  return `${min / 16}rem, ${vw}vw + ${base / 16}rem, ${max / 16}rem`;
+  return `${min / 16}rem, ${vw}vw + ${base}rem, ${max / 16}rem`;
 }
 
 btnConverter.addEventListener("click", () => {
@@ -55,5 +56,10 @@ btnCalculation.addEventListener("click", () => {
   const valueLMax = Number(lMax.value);
   const valueLMin = Number(lMin.value);
 
-  result.textContent = (calculationClamp(valueMax, valueMin, valueLMax, valueLMin));
+  result.textContent = calculationClamp(
+    valueMax,
+    valueMin,
+    valueLMax,
+    valueLMin,
+  );
 });
